@@ -101,7 +101,7 @@ const ConverterForm = () => {
                 <div className="currency-dropdown">
                     <label htmlFor="currencyList" className='input-overlay-text'>To Currency</label>
                     <select name="currencyList" id="currencyList" value={convertedCurrency} onChange={e => handleSelectCurrency(e, 2)}>
-                        {Object.entries(currencies).map(([currency, details]) => {
+                        {Object.entries(currencies).sort().map(([currency, details]) => {
                                 return <option value={details.code} key={details.code}>({currency}) {details.name}</option>
                         })
                         
